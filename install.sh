@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run with:
+# curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/install.sh | bash
+
 set -e
 
 echo "Setting up /etc/hosts."

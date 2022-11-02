@@ -1,0 +1,6 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+210.183.205.72 mha
+210.183.205.77 vip
+210.183.205.78 db-1
+210.183.205.79 db-2

@@ -2,14 +2,29 @@
 
 set -e
 
+echo "################################################################"
+echo "# 이 스크립트는 본 설치(install) 스크립트입니다."
+echo "################################################################"
+
 name=$(hostname)
 
 if [[ $name == *DB-1 ]]; then
-  sudo -- sh -c "curl http://rms.dhsc.co.kr/mha/scripts/install-db-1.sh | bash"
+  echo "이 호스트는 db-1입니다. 설치 작업을 시작합니다."
+  echo "sudo를 위한 현재 계정 비밀번호를 물어볼 것입니다."
+  sudo ./scripts/db-1.sh
 elif [[ $name == *DB-2 ]]; then
-  sudo -- sh -c "curl http://rms.dhsc.co.kr/mha/scripts/install-db-2.sh | bash"
+  echo "이 호스트는 db-2입니다. 설치 작업을 시작합니다."
+  echo "sudo를 위한 현재 계정 비밀번호를 물어볼 것입니다."
+  sudo ./scripts/db-2.sh
 elif [[ $name == *MHA ]]; then
-  sudo -- sh -c "curl http://rms.dhsc.co.kr/mha/scripts/install-mha.sh | bash"
+  echo "이 호스트는 mha입니다. 설치 작업을 시작합니다."
+  echo "sudo를 위한 현재 계정 비밀번호를 물어볼 것입니다."
+  sudo ./scripts/mha.sh
 else
-  echo "Unknown host name. Aborting installation."
+  echo "이 호스트는 ${name}입니다. 호스트를 식별할 수 없어 설치 작업을 중단합니다."
+  exit 1
 fi
+
+echo "################################################################"
+echo "# 본 설치(install) 스크립트를 마칩니다."
+echo "################################################################"

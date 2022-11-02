@@ -5,7 +5,7 @@ set -e
 # 이 스크립트는 root로 실행해야 합니다!
 
 echo "호스트 파일(/etc/hosts)을 준비합니다."
-cp ../resources/system/hosts /etc/hosts
+cp resources/system/hosts /etc/hosts
 
 echo "MariaDB를 설치합니다."
 # yum -y install mariadb-server

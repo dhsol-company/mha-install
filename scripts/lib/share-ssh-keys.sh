@@ -4,10 +4,6 @@
 
 set -e
 
-echo "Adding to PATH."
-echo "export PATH=$PATH:/usr/local/bin:/usr/local/mysql/bin" >>~/.bash_profile
-source ~/.bash_profile
-
 echo "Generating ssh key."
 ssh-keygen -t rsa -b 4096
 

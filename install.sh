@@ -2,14 +2,24 @@
 
 set -e
 
-name=$(hostname)
+echo "Setting up /etc/hosts."
+curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/resources/system/hosts >/etc/hosts
 
-if [[ $name == *DB-1 ]]; then
-  sudo -- sh -c "curl http://rms.dhsc.co.kr/mha/scripts/install-db-1.sh | bash"
-elif [[ $name == *DB-2 ]]; then
-  sudo -- sh -c "curl http://rms.dhsc.co.kr/mha/scripts/install-db-2.sh | bash"
-elif [[ $name == *MHA ]]; then
-  sudo -- sh -c "curl http://rms.dhsc.co.kr/mha/scripts/install-mha.sh | bash"
-else
-  echo "Unknown host name. Aborting installation."
-fi
+echo "Preinstall on db-1"
+ssh db-1 sudo -- sh -c "curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/scripts/pre.sh | bash"
+
+echo "Preinstall on db-2"
+ssh db-2 sudo -- sh -c "curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/scripts/pre.sh | bash"
+
+echo "Preinstall on mha"
+ssh mha sudo -- sh -c "curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/scripts/pre.sh | bash"
+
+
+echo "Install on db-1"
+ssh db-1 sudo -- sh -c "curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/scripts/db-1.sh | bash"
+
+echo "Install on db-2"
+ssh db-2 sudo -- sh -c "curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/scripts/db-2.sh | bash"
+
+echo "Install on mha"
+ssh mha sudo -- sh -c "curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/scripts/mha.sh | bash"

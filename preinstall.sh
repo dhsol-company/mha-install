@@ -22,5 +22,9 @@ elif [[ $name == *MHA ]]; then
   sudo ./scripts/pre.sh
 else
   echo "이 호스트는 ${name}입니다. 호스트를 식별할 수 없어 사전 설치 작업을 중단합니다."
-  echo "Unknown host name. Aborting installation."
+  exit 1
 fi
+
+echo "################################################################"
+echo "# 사전 설치(pre-install) 스크립트를 마칩니다."
+echo "################################################################"

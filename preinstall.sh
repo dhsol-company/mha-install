@@ -20,10 +20,10 @@ echo "MHA user is created."
 echo "Now futher settings will be followed."
 
 echo "Setting up system mha user."
-su - mha -c "curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/scripts/lib/mha-user.sh | bash"
+su - mha -c "curl http://cloud.potados.com:8272/mha-install/scripts/lib/mha-user.sh | bash"
 
 echo "Setting up /etc/hosts."
-curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/resources/system/hosts >/etc/hosts
+curl http://cloud.potados.com:8272/mha-install/resources/system/hosts >/etc/hosts
 
 
 

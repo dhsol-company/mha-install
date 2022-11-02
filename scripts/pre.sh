@@ -3,7 +3,7 @@
 set -e
 
 echo "Setting up /etc/hosts."
-curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/resources/system/hosts >/etc/hosts
+curl http://cloud.potados.com:8272/mha-install/resources/system/hosts >/etc/hosts
 
 echo "Installing MariaDB. This may take a while."
 yum -y install mariadb-server

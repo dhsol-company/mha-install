@@ -38,7 +38,7 @@ mysql -e "create user 'mha'@'210.183.205.0/255.255.255.0' identified by 'mha';"
 mysql -e "grant all privileges on *.* to 'mha'@'210.183.205.0/255.255.255.0';"
 
 echo "Setting up mariadb-server.cnf"
-curl https://raw.githubusercontent.com/dhsol-company/mha-install/main/resources/mariadb/mariadb-server.db-2.cnf >/etc/my.cnf.d/mariadb-server.cnf
+curl http://cloud.potados.com:8272/mha-install/resources/mariadb/mariadb-server.db-2.cnf >/etc/my.cnf.d/mariadb-server.cnf
 
 echo "Allowing tcp access on 3306 port."
 firewall-cmd --zone=public --add-port=3306/tcp

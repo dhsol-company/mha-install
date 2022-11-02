@@ -5,4 +5,4 @@
 set -e
 
 echo "ssh-key를 공유합니다."
-su - mha -c ./lib/share-ssh-key.sh
+./scripts/lib/share-ssh-key.sh

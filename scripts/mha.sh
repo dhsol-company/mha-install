@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# MUST be run as root!
+# 이 스크립트는 root 사용자로 실행해야 합니다!
 
 set -e
 
-echo "Copy mha user's ssh key to all hosts."
-su - mha -c "curl https://1cdc-121-170-236-221.ngrok.io/scripts/lib/share-ssh-keys.sh | bash"
-
-echo "mha setup done!"
+echo "ssh-key를 공유합니다."
+su - mha -c ./scripts/share-ssh-key.sh

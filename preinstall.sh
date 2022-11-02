@@ -2,6 +2,7 @@
 
 set -e
 
+echo "한글 히히!"
 echo "This is a preinstall script."
 echo "Please run this on all servers including manager server."
 

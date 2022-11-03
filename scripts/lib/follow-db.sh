@@ -12,6 +12,7 @@ master_host=$2
 
 if [ -z "$slave_host" ] || [ -z "$master_host" ]; then
   echo "첫 번째 인자는 slave의 호스트, 두 번째 인자는 master의 호스트가 필요합니다!"
+  exit 1;
 fi
 
 echo "이 DB를 slave로 구성하기 위해 db-1의 마스터 정보를 알아 옵니다."

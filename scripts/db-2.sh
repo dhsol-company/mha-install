@@ -26,5 +26,5 @@ echo "MariaDB 사용자와 스케마를 생성합니다."
 $rootdir/scripts/lib/mariadb-users-and-schema.sh
 
 echo "Master DB를 바라보도록 구성합니다."
-$rootdir/scripts/lib/follow-db-1.sh
+$rootdir/scripts/lib/follow-db.sh db-2 db-1 # from db-2(slave) to db-1(master)
 

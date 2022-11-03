@@ -21,6 +21,7 @@ perl Makefile.PL
 echo "make를 실행합니다."
 make
 make install
+cd ..
 
 echo "MHA 디렉토리를 마련합니다."
 mkdir -p /masterha/rms

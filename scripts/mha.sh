@@ -6,3 +6,10 @@ set -e
 
 echo "ssh-key를 공유합니다."
 ./scripts/lib/share-ssh-key.sh
+
+echo "MHA를 위한 의존성을 설치합니다."
+./scripts/lib/dependencies.sh
+
+echo "MHA 노드를 설치합니다."
+./scripts/lib/mha-node.sh
+

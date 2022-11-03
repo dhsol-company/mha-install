@@ -30,3 +30,6 @@ mkdir -p /masterha/rms
 
 echo "디렉토리와 파일들을 mha 사용자의 것으로 만들어줍니다."
 chown -R mha:mysql /masterha
+
+echo "커맨드를 복사해줍니다."
+cp $rootdir/resources/commands/node/* /usr/local/bin

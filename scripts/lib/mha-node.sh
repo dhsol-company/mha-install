@@ -21,3 +21,9 @@ perl Makefile.PL
 echo "make를 실행합니다."
 make
 make install
+
+echo "MHA 디렉토리를 마련합니다."
+mkdir -p /masterha/rms
+
+echo "디렉토리와 파일들을 mha 사용자의 것으로 만들어줍니다."
+chown -R mha:mysql /masterha

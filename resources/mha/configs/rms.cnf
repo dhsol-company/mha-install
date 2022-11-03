@@ -1,0 +1,29 @@
+﻿[server default]
+user=mha
+password=mha
+
+ssh_user=mha
+
+repl_user=repl
+repl_password=repl
+
+manager_workdir=/masterha/rms
+remote_workdir=/masterha/rms
+manager_log=/masterha/rms/rms.log
+
+master_binlog_dir=/var/lib/mysql
+
+secondary_check_script=/bin/masterha_secondary_check -s db-1 -s db-2 --user=mha --master_host=db-1 --master_ip=db-1 --master_port=3306
+master_ip_failover_script=/masterha/scripts/master_ip_failover
+master_ip_online_change_script=/masterha/scripts/master_ip_online_change
+
+# shutdown_script= /script/masterha/power_manager
+# report_script= /script/masterha/send_report
+
+[server1]
+hostname=db-1
+candidate_master=1
+
+[server2]
+hostname=db-2
+candidate_master=1

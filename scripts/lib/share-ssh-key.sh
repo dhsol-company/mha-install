@@ -4,7 +4,7 @@
 
 set -e
 
-basedir=$(dirname "$0")
+basedir=$(dirname "$(readlink -f "$0")")
 rootdir="$basedir/../.."
 
 sudo -i -u mha bash << EOF

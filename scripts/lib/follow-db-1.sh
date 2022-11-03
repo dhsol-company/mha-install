@@ -4,7 +4,7 @@
 
 set -e
 
-basedir=$(dirname "$0")
+basedir=$(dirname "$(readlink -f "$0")")
 rootdir="$basedir/../.."
 
 echo "이 DB를 slave로 구성하기 위해 db-1의 마스터 정보를 알아 옵니다."

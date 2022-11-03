@@ -4,7 +4,7 @@
 
 set -e
 
-basedir=$(dirname "$0")
+basedir=$(dirname "$(readlink -f "$0")")
 rootdir="$basedir/.."
 
 echo "ssh-key를 공유합니다."

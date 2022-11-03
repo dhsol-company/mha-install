@@ -4,7 +4,7 @@
 
 set -e
 
-basedir=$(dirname "$0")
+basedir=$(dirname "$(readlink -f "$0")")
 rootdir="$basedir/../.."
 
 echo "패키지 디렉토리를 마련합니다."

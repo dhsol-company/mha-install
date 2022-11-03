@@ -4,7 +4,7 @@
 
 set -e
 
-basedir=$(dirname "$0")
+basedir=$(dirname "$(readlink -f "$0")")
 rootdir="$basedir/.."
 
 echo "호스트 파일(/etc/hosts)을 준비합니다."

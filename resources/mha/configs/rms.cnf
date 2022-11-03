@@ -13,7 +13,7 @@ manager_log=/masterha/rms/rms.log
 
 master_binlog_dir=/var/lib/mysql
 
-secondary_check_script=/bin/masterha_secondary_check -s db-1 -s db-2 --user=mha --master_host=db-1 --master_ip=db-1 --master_port=3306
+secondary_check_script=/usr/local/bin/masterha_secondary_check -s db-1 -s db-2 --user=mha --master_host=db-1 --master_ip=db-1 --master_port=3306
 master_ip_failover_script=/masterha/scripts/master_ip_failover
 master_ip_online_change_script=/masterha/scripts/master_ip_online_change
 

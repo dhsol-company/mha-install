@@ -7,6 +7,8 @@ set -e
 basedir=$(dirname "$(readlink -f "$0")")
 rootdir="$basedir/.."
 
+mkdir -p /root/installation
+
 echo "호스트 파일(/etc/hosts)을 준비합니다."
 cp $rootdir/resources/system/hosts /etc/hosts
 

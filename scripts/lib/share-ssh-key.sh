@@ -5,6 +5,8 @@
 set -e
 
 sudo -i -u mha bash << EOF
+echo "여기서부터는 mha 사용자로 실행합니다."
+
 echo "SSH key를 생성합니다."
 echo "모두 Enter로 넘어가주세요 :)"
 ssh-keygen -t rsa -b 4096 </dev/tty # address terminal directly
@@ -20,4 +22,6 @@ ssh-copy-id mha@db-2 </dev/tty # address terminal directly
 echo "만든 SSH key를 mha 서버에 보냅니다."
 echo "mha 서버의 mha 사용자 비밀번호를 물어볼 것입니다."
 ssh-copy-id mha@mha </dev/tty # address terminal directly
+
+echo "mha 사용자 나갑니다."
 EOF

@@ -29,6 +29,7 @@ sudo -i -u mha bash <<EOF
 echo "여기서부터는 mha 사용자로 실행합니다."
 
 echo "PATH에 MHA 설치 경로(/usr/local/bin)를 추가해줍니다."
+source ~/.bash_profile
 echo "export PATH=$PATH:/usr/local/bin" >> ~/.bash_profile
 source ~/.bash_profile
 

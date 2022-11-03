@@ -25,17 +25,6 @@ echo "make를 실행합니다."
 make
 make install
 
-sudo -i -u mha bash <<EOF
-echo "여기서부터는 mha 사용자로 실행합니다."
-
-echo "PATH에 MHA 설치 경로(/usr/local/bin)를 추가해줍니다."
-source ~/.bashrc
-echo "export PATH=$PATH:/usr/local/bin" >> ~/.bashrc
-source ~/.bashrc
-
-echo "mha 사용자로 실행하는 구문을 마칩니다."
-EOF
-
 echo "매니저용 MHA 디렉토리를 마련합니다."
 mkdir -p /etc/masterha
 mkdir -p /masterha/rms

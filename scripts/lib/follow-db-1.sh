@@ -4,6 +4,9 @@
 
 set -e
 
+basedir=$(dirname "$0")
+rootdir="$basedir/../.."
+
 echo "이 DB를 slave로 구성하기 위해 db-1의 마스터 정보를 알아 옵니다."
 master_log_file=$(mysql --host=db-1 --user=mha --password=mha -Ne "show master status\G" | head -n 2 | tail -n 1)
 master_log_pos=$(mysql --host=db-1 --user=mha --password=mha -Ne "show master status\G" | head -n 3 | tail -n 1)

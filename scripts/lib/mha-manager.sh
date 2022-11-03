@@ -4,6 +4,9 @@
 
 set -e
 
+basedir=$(dirname "$0")
+rootdir="$basedir/../.."
+
 echo "패키지 디렉토리를 마련합니다."
 mkdir -p /root/pkg
 cd /root/pkg
@@ -29,8 +32,8 @@ mkdir -p /masterha/rms
 mkdir -p /masterha/scripts
 
 echo "설정 및 스크립트를 복사합니다."
-cp ./resources/mha/configs/* /etc/masterha/
-cp ./resources/mha/scripts/* /masterha/scripts/
+cp $rootdir/resources/mha/configs/* /etc/masterha/
+cp $rootdir/resources/mha/scripts/* /masterha/scripts/
 
 echo "디렉토리와 파일들을 mha 사용자의 것으로 만들어줍니다."
 chown -R mha:mysql /masterha

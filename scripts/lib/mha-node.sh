@@ -4,6 +4,9 @@
 
 set -e
 
+basedir=$(dirname "$0")
+rootdir="$basedir/../.."
+
 echo "패키지 디렉토리를 마련합니다."
 mkdir -p /root/pkg
 cd /root/pkg
@@ -21,7 +24,6 @@ perl Makefile.PL
 echo "make를 실행합니다."
 make
 make install
-cd ..
 
 echo "MHA 디렉토리를 마련합니다."
 mkdir -p /masterha/rms

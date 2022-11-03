@@ -4,8 +4,11 @@
 
 set -e
 
+basedir=$(dirname "$0")
+rootdir="$basedir/.."
+
 echo "호스트 파일(/etc/hosts)을 준비합니다."
-cp ./resources/system/hosts /etc/hosts
+cp $rootdir/resources/system/hosts /etc/hosts
 
 echo "MariaDB를 설치합니다."
 yum -y install mariadb-server

@@ -4,6 +4,9 @@
 
 set -e
 
+basedir=$(dirname "$0")
+rootdir="$basedir/../.."
+
 sudo -i -u mha bash << EOF
 echo "여기서부터는 mha 사용자로 실행합니다."
 

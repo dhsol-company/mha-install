@@ -4,6 +4,9 @@
 
 set -e
 
+basedir=$(dirname "$0")
+rootdir="$basedir/../.."
+
 echo "서비스용 DB 사용자(MES_DHSol)를 생성합니다."
 read -p "DB 사용자 'MES_DHSol'의 비밀번호는 무엇으로 할까요?: " mes_dhsol_password
 mysql -e "create user 'MES_DHSol'@'%' identified by '$mes_dhsol_password';"

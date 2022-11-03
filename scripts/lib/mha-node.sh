@@ -33,3 +33,4 @@ chown -R mha:mysql /masterha
 
 echo "커맨드를 복사해줍니다."
 cp $rootdir/resources/commands/node/* /usr/local/bin
+chmod +x /usr/local/bin/*

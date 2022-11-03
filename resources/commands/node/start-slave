@@ -19,6 +19,7 @@ echo "mha 사용자로 로컬호스트 접근은 어렵기 때문에, 이 호스
 host=$(ifconfig ens192 | grep 'inet' | head -1 | awk '{print $2}')
 
 echo "이 호스트($host)에서 Slave를 시작합니다."
+mysql --host=$host --user=mha --password=mha -e "stop slave;"
 mysql --host=$host --user=mha --password=mha -e "change master to master_host='$master_host', master_user='repl', master_password='repl', master_log_file='$master_log_file', master_log_pos=$master_log_pos;"
 mysql --host=$host --user=mha --password=mha -e "start slave;"
 mysql --host=$host --user=mha --password=mha -e "show slave status\G;"

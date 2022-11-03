@@ -7,6 +7,13 @@ set -e
 basedir=$(dirname "$(readlink -f "$0")")
 rootdir="$basedir/../.."
 
+checker="/root/installation/ssh-key-shared"
+
+if [ -f "$checker" ]; then
+  echo "이미 ssh key 생성과 전파가 완료되었습니다. 다시 진행하려면 $checker 파일을 지워주세요."
+  exit
+fi
+
 sudo -i -u mha bash << EOF
 echo "여기서부터는 mha 사용자로 실행합니다."
 
@@ -28,3 +35,5 @@ ssh-copy-id mha@mha </dev/tty # address terminal directly
 
 echo "mha 사용자로 실행하는 구문을 마칩니다."
 EOF
+
+touch $checker

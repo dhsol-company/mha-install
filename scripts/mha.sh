@@ -16,3 +16,5 @@ $rootdir/scripts/lib/dependencies.sh
 echo "MHA 노드를 설치합니다."
 $rootdir/scripts/lib/mha-node.sh
 
+echo "MHA 매니저를 설치합니다."
+$rootdir/scripts/lib/mha-manager.sh

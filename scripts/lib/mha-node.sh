@@ -13,7 +13,7 @@ wget https://github.com/dhsol-company/mha4mysql-node/releases/download/v0.58-fix
 
 echo "압축을 해제합니다."
 tar xzfv mha4mysql-node-0.58-fix.tar.gz
-cd mha4mysql-node-0.58-fix.tar.gz
+cd mha4mysql-node-0.58-fix
 
 echo "Makefile을 실행합니다"
 perl Makefile.PL

@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 ## Fail-Over VIP Change
 
 V_NEW_MASTER=`cat /etc/hosts | grep $1 | awk '{print $2}'`

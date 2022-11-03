@@ -20,6 +20,6 @@ master_log_file=$(mysql --host=$master_host --user=mha --password=mha -Ne "show 
 master_log_pos=$(mysql --host=$master_host --user=mha --password=mha -Ne "show master status\G" | head -n 3 | tail -n 1)
 
 echo "Slave를 시작합니다."
-mysql --host=$slave_host -e "change master to master_host='$master_host', master_user='repl', master_password='repl', master_log_file='$master_log_file', master_log_pos=$master_log_pos;"
-mysql --host=$slave_host -e "start slave;"
-mysql --host=$slave_host -e "show slave status\G;"
+mysql --host=$slave_host --user=mha --password=mha -e "change master to master_host='$master_host', master_user='repl', master_password='repl', master_log_file='$master_log_file', master_log_pos=$master_log_pos;"
+mysql --host=$slave_host --user=mha --password=mha -e "start slave;"
+mysql --host=$slave_host --user=mha --password=mha -e "show slave status\G;"

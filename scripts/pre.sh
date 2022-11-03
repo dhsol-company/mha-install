@@ -18,3 +18,5 @@ useradd -g mysql mha && echo "mha 사용자를 생성하였습니다." || echo "
 
 echo "mha 사용자의 비밀번호를 변경합니다."
 passwd mha
+
+

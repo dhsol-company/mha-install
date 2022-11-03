@@ -20,7 +20,7 @@ echo "MariaDB를 시작합니다."
 systemctl start mariadb.service
 
 echo "MariaDB 보안 설정을 시작합니다."
-mysql_secure_installation
+$rootdir/scripts/lib/secure-db.sh
 
 echo "MariaDB 사용자와 스케마를 생성합니다."
 $rootdir/scripts/lib/mariadb-schema-and-user.sh

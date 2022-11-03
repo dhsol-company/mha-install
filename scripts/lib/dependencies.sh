@@ -10,7 +10,7 @@ yum config-manager --set-enabled crb
 echo "엔터프라이즈 리눅스를 위한 추가 패키지를 설치합니다."
 yum install -y \
   epel-release \
-  epel-next-releas
+  epel-next-release
 
 echo "시스템에 도움이 되는 유틸리티를 설치합니다."
 yum install -y \

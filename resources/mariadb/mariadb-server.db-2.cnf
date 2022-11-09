@@ -49,6 +49,9 @@ pid-file=/run/mariadb/mariadb.pid
 [mariadb]
 server_id=2
 log-bin=mysql-bin
+rpl_semi_sync_slave_enabled=ON
+rpl_semi_sync_master_enabled=ON
+
 read_only=1
 relay_log_purge=0
 

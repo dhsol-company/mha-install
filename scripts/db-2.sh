@@ -17,7 +17,7 @@ echo "db-2를 위한 MariaDB 설정 파일을 적절한 위치에 가져다 놓�
 cp $rootdir/resources/mariadb/mariadb-server.db-2.cnf /etc/my.cnf.d/mariadb-server.cnf
 
 echo "MariaDB를 시작합니다."
-systemctl start mariadb.service
+systemctl restart mariadb.service
 
 echo "MariaDB 보안 설정을 시작합니다."
 $rootdir/scripts/lib/secure-db.sh

@@ -14,11 +14,18 @@
 # customize your systemd unit file for mysqld/mariadb according to the
 # instructions in http://fedoraproject.org/wiki/Systemd
 [mysqld]
-bind-address=0.0.0.0
 datadir=/var/lib/mysql
 socket=/var/lib/mysql/mysql.sock
 log-error=/var/log/mariadb/mariadb.log
 pid-file=/run/mariadb/mariadb.pid
+
+server_id=2 # 고유한 식별자입니다.
+log-bin=mysql-bin # bin 로그의 베이스 파일 이름입니다.
+bind-address=0.0.0.0 # 모든 IPv4 주소에서 요청을 받습니다.
+lower_case_table_names=1 # 테이블 이름 대소문자를 구분하지 않습니다.
+rpl_semi_sync_slave_enabled=ON # Slave에서 semi-sync replication을 켭니다.
+rpl_semi_sync_master_enabled=ON # Master에서 semi-sync replication을 켭니다.
+log_bin_trust_function_creators=1 # SUPER가 아닌 사용자도 함수를 만들 수 있게 합니다.
 
 #
 # * Galera-related settings
@@ -47,10 +54,6 @@ pid-file=/run/mariadb/mariadb.pid
 # If you use the same .cnf file for MySQL and MariaDB,
 # you can put MariaDB-only options here
 [mariadb]
-server_id=2
-log-bin=mysql-bin
-rpl_semi_sync_slave_enabled=ON
-rpl_semi_sync_master_enabled=ON
 
 # This group is only read by MariaDB-10.5 servers.
 # If you use the same .cnf file for MariaDB of different versions,

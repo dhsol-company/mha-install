@@ -11,7 +11,7 @@ echo "ssh-key를 공유합니다."
 $rootdir/scripts/lib/share-ssh-key.sh
 
 echo "MariaDB를 위해 3306 포트를 열어줍니다."
-firewall-cmd --zone=public --add-port=3306/tcp
+firewall-cmd --zone=public --permanent --add-port=3306/tcp
 
 echo "db-1을 위한 MariaDB 설정 파일을 적절한 위치에 가져다 놓습니다."
 cp $rootdir/resources/mariadb/mariadb-server.db-1.cnf /etc/my.cnf.d/mariadb-server.cnf

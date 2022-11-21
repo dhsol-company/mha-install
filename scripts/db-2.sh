@@ -12,6 +12,7 @@ $rootdir/scripts/lib/share-ssh-key.sh
 
 echo "MariaDB를 위해 3306 포트를 열어줍니다."
 firewall-cmd --zone=public --permanent --add-port=3306/tcp
+systemctl restart firewalld
 
 echo "db-2를 위한 MariaDB 설정 파일을 적절한 위치에 가져다 놓습니다."
 cp $rootdir/resources/mariadb/mariadb-server.db-2.cnf /etc/my.cnf.d/mariadb-server.cnf

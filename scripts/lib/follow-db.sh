@@ -15,7 +15,7 @@ if [ -z "$slave_host" ] || [ -z "$master_host" ]; then
   exit 1
 fi
 
-read -p "$(slave_host)이(가) $(master_host)을(를) 바라보도록 설정하겠습니까? 최초의 설치라면 yes를, 그렇지 않다면 no를 권장합니다. (yes/no) " yn
+read -p "${slave_host}이(가) ${master_host}을(를) 바라보도록 설정하겠습니까? 최초의 설치라면 yes를, 그렇지 않다면 no를 권장합니다. (yes/no) " yn
 
 case $yn in
 yes)
@@ -27,7 +27,7 @@ yes)
   ;;
 esac
 
-echo "이 DB($slave_host)를 slave로 구성하기 위해 $(master_host)의 마스터 정보를 알아 옵니다."
+echo "이 DB(${slave_host})를 slave로 구성하기 위해 ${master_host}의 마스터 정보를 알아 옵니다."
 master_log_file=$(mysql --host=$master_host --user=mha --password=mha -Ne "show master status\G" | head -n 2 | tail -n 1)
 master_log_pos=$(mysql --host=$master_host --user=mha --password=mha -Ne "show master status\G" | head -n 3 | tail -n 1)
 

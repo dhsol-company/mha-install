@@ -18,6 +18,7 @@ datadir=/var/lib/mysql
 socket=/var/lib/mysql/mysql.sock
 log-error=/var/log/mariadb/mariadb.log
 pid-file=/run/mariadb/mariadb.pid
+character-set-server=utf8
 
 server_id=1 # 고유한 식별자입니다.
 log-bin=mysql-bin # bin 로그의 베이스 파일 이름입니다.

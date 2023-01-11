@@ -4,6 +4,7 @@
 #
 
 [mysql]
+default-character-set=utf8
 
 [mysql_upgrade]
 
@@ -14,6 +15,7 @@
 [mysqlcheck]
 
 [mysqldump]
+default-character-set=utf8
 
 [mysqlimport]
 

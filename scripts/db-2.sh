@@ -16,6 +16,8 @@ systemctl restart firewalld
 
 echo "db-2를 위한 MariaDB 설정 파일을 적절한 위치에 가져다 놓습니다."
 cp $rootdir/resources/mariadb/mariadb-server.db-2.cnf /etc/my.cnf.d/mariadb-server.cnf
+cp $rootdir/resources/mariadb/client.cnf /etc/my.cnf.d/client.cnf
+cp $rootdir/resources/mariadb/mysql-clients.cnf /etc/my.cnf.d/mysql-clients.cnf
 
 echo "MariaDB를 시작합니다."
 systemctl restart mariadb.service

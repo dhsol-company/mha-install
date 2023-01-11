@@ -23,6 +23,7 @@ server_id=1 # 고유한 식별자입니다.
 log-bin=mysql-bin # bin 로그의 베이스 파일 이름입니다.
 bind-address=0.0.0.0 # 모든 IPv4 주소에서 요청을 받습니다.
 event_scheduler=ON # 이벤트 스케줄러를 사용합니다.
+concurrent_insert=ALWAYS # MyISAM 테이블에 대해 hole이 있어도 동시 insert를 허용합니다.
 lower_case_table_names=1 # 테이블 이름 대소문자를 구분하지 않습니다.
 rpl_semi_sync_slave_enabled=ON # Slave에서 semi-sync replication을 켭니다.
 rpl_semi_sync_master_enabled=ON # Master에서 semi-sync replication을 켭니다.
